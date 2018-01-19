@@ -7,6 +7,9 @@
 - name: Symlink gitprompt
   include: roles/dotfiles/tasks/symlink.yml src=.git-prompt.sh dest=~/.bashrc.d/git-prompt
 
+- name: git bash setup
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/git dest=~/.bashrc.d/git
+
 - name: Install git-so-fancy
   npm:
     name: diff-so-fancy
