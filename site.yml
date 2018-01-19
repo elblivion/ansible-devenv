@@ -12,6 +12,8 @@
     - ssh
     # IDE
     - vim
+    # Infra tools
+    - chef
 
 - hosts: single_role
   roles:

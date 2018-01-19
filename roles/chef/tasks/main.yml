@@ -1,0 +1,8 @@
+- name: Create ~/.chef
+  file:
+    path: ~/.chef
+    state: directory
+
+- name: chef bash setup
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/chef dest=~/.bashrc.d/chef
+
