@@ -38,7 +38,7 @@ ansible-playbook bootstrap.yml -i inventory --ask-become-pass "$@"
 
 echo 'Switch from https origin on this git repo to SSH'
 git remote rm origin
-git remote add origin git@github.com:abesto/ansible-devenv.git
+git remote add origin git@github.com:elblivion/ansible-devenv.git
 git fetch
 git branch -u origin/master
 
