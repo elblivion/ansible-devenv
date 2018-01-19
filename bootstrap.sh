@@ -3,29 +3,32 @@ set -euo pipefail
 email="$1"; shift
 
 echo 'Upgrading system packages...'
-sudo apt-get update
-sudo apt-get upgrade
+#sudo apt-get update
+#sudo apt-get upgrade
 
 echo 'Installing packages required to build ansible, lastpass-cli from source...'
 sudo apt-get install --no-install-recommends \
-	virtualenv libssl-dev cmake libffi-dev libcurl4-openssl-dev \
-	asciidoc xsltproc
+	libssl-dev cmake libffi-dev libcurl4-openssl-dev \
+	asciidoc xsltproc ansible libxml2-dev
 
-echo 'Creating virtualenv with Ansible snapshot (for lastpass integration)...'
-virtualenv virtualenv
-set +u; . virtualenv/bin/activate; set -u
-pip install ansible  # replace with ansible from apt once 2.3 reaches Apt
+#echo 'Creating virtualenv with Ansible snapshot (for lastpass integration)...'
+#virtualenv virtualenv
+#set +u; . virtualenv/bin/activate; set -u
+#pip install ansible  # replace with ansible from apt once 2.3 reaches Apt
 
-echo 'Installing lastpass-cli from source (Ubuntu has a broken, old version)...'
-mkdir -p ~/lastpass
-pushd ~/lastpass
-wget https://github.com/lastpass/lastpass-cli/archive/v1.1.2.tar.gz
-tar -xzf v1.1.2.tar.gz
-cd lastpass-cli-1.1.2
-cmake .
-make
-sudo make install install-doc
-popd
+which lpass > /dev/null
+if [ $? -ne 0]; then
+  echo 'Installing lastpass-cli from source (Ubuntu has a broken, old version)...'
+  mkdir -p ~/lastpass
+  pushd ~/lastpass
+  wget https://github.com/lastpass/lastpass-cli/archive/v1.1.2.tar.gz
+  tar -xzf v1.1.2.tar.gz
+  cd lastpass-cli-1.1.2
+  cmake .
+  make
+  sudo make install install-doc
+  popd
+fi
 
 echo 'LastPass login...'
 lpass login "$email"
