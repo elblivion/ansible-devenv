@@ -1,0 +1,7 @@
+- name: Install direnv
+  become: true
+  apt:
+    name: direnv
+
+- name: bash setup
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/direnv dest=~/.bashrc.d/direnv
