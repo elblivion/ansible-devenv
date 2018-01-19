@@ -1,6 +1,12 @@
 - name: Symlink git configuration
   include: roles/dotfiles/tasks/symlink.yml src=.gitconfig
 
+- name: Symlink gitignore
+  include: roles/dotfiles/tasks/symlink.yml src=.gitignore_global
+
+- name: Symlink gitprompt
+  include: roles/dotfiles/tasks/symlink.yml src=.git-prompt.sh dest=~/.bashrc.d/git-prompt
+
 - name: Install git-so-fancy
   npm:
     name: diff-so-fancy

@@ -5,3 +5,26 @@
 
 - name: Symlink .vimrc
   include: roles/dotfiles/tasks/symlink.yml src=.vimrc
+
+- name: ~/.vim/autoload
+  file:
+    path: ~/.vim/autoload
+    state: directory
+
+- name: ~/.vim/bundle
+  file:
+    path: ~/.vim/bundle
+    state: directory
+
+- name: Install Pathogen
+  get_url:
+    url: https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    dest: ~/.vim/autoload/pathogen.vim
+
+- name: Install vim-fugitive
+  git:
+    repo=https://github.com/tpope/vim-fugitive.git
+    dest=~/.vim/bundle/vim-fugitive
+    update=yes
+    accept_hostkey=yes
+  sudo: no
