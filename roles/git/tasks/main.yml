@@ -5,10 +5,10 @@
   include: roles/dotfiles/tasks/symlink.yml src=.gitignore_global
 
 - name: Symlink gitprompt
-  include: roles/dotfiles/tasks/symlink.yml src=.git-prompt.sh dest=~/.bashrc.d/git-prompt
+  include: roles/dotfiles/tasks/symlink.yml src=.git-prompt.sh dest=~/.bashrc.d/22-git-prompt
 
 - name: git bash setup
-  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/git dest=~/.bashrc.d/git
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/git dest=~/.bashrc.d/21-git
 
 - name: Install git-so-fancy
   npm:
