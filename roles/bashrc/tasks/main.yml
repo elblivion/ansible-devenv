@@ -5,3 +5,6 @@
 
 - name: ~/.bashrc
   include: roles/dotfiles/tasks/symlink.yml src=.bashrc force=true
+
+- name: bash prompt
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/prompt dest=~/.bashrc.d/90-prompt.sh force=true

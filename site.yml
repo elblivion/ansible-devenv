@@ -10,6 +10,7 @@
     - bashrc
     - tmux
     - ssh
+    - direnv
     # IDE
     - vim
     # devenv

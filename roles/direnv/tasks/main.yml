@@ -4,4 +4,4 @@
     name: direnv
 
 - name: bash setup
-  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/direnv dest=~/.bashrc.d/direnv
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/direnv dest=~/.bashrc.d/99-direnv
