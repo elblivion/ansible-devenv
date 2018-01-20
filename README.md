@@ -15,4 +15,6 @@ dropbox start -i
 # manually log in to keybase, add private key to GPG
 keybase login
 keybase pgp export -s | gpg --allow-secret-key-import --import
-```
+# or, fetch from lastpass
+lpass login <email>
+lpass show --notes "gpg keys" | gpg --allow-secret-key-import --import
