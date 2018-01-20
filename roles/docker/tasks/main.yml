@@ -14,20 +14,20 @@
 - name: Add Docker APT repo GPG key
   become: true
   apt_key:
-    url: https://apt.dockerproject.org/gpg
-    id: 58118E89F3A912897C070ADBF76221572C52609D
+    url: https://download.docker.com/linux/ubuntu/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
 - name: Add Docker APT repo
   become: true
   apt_repository:
     # pinning to Zesty until there's an official release for Artful
     #repo: deb https://apt.dockerproject.org/repo/ ubuntu-{{ ansible_distribution_release }} main
-    repo: deb https://apt.dockerproject.org/repo/ ubuntu-zesty main
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu artful    stable
 
 - name: Install Docker
   become: true
   apt:
-    name: docker-engine
+    name: docker-ce
 
 - name: Create docker group
   group:
@@ -40,15 +40,15 @@
     groups: docker
     append: true
 
-- name: Install docker-compose
-  pip:
-    virtualenv: ~/docker-compose
-    virtualenv_python: python3
-    name: docker-compose
-
-- name: Symlink docker-compose
-  become: true
-  file:
-    src: "{{ ansible_env.HOME }}/docker-compose/bin/docker-compose"
-    dest: /usr/local/bin/docker-compose
-    state: link
+    #- name: Install docker-compose
+    #  pip:
+    #    virtualenv: ~/docker-compose
+    #    virtualenv_python: python3
+    #    name: docker-compose
+    #
+    #- name: Symlink docker-compose
+    #  become: true
+    #  file:
+    #    src: "{{ ansible_env.HOME }}/docker-compose/bin/docker-compose"
+    #    dest: /usr/local/bin/docker-compose
+    #    state: link

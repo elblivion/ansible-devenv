@@ -12,8 +12,9 @@
     - ssh
     # IDE
     - vim
-    # Infra tools
+    # devenv
     - chef
+    - docker
     # GUI programs
     - zoom_us
 
