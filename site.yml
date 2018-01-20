@@ -16,6 +16,7 @@
     # devenv
     - chef
     - docker
+    - aws
     # GUI programs
     - zoom_us
 
