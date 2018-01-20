@@ -10,6 +10,11 @@
 - name: git bash setup
   include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/git dest=~/.bashrc.d/21-git
 
+- name: github token
+  template:
+    dest: ~/.bashrc.d/github.sh
+    src: github.sh
+
 - name: Install git-so-fancy
   npm:
     name: diff-so-fancy
