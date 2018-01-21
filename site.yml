@@ -17,6 +17,7 @@
     - chef
     - docker
     - aws
+    - kubernetes
     # GUI programs
     - zoom_us
 

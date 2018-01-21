@@ -1,0 +1,11 @@
+kubectl:
+  version: 1.9.2
+  checksum: sha256:0114255568a8b5cb998c516370f3822bebe78b84d1e914d4d9afff95518a56c0
+
+kops:
+  version: 1.8.0
+  checksum: sha256:57d400a10f3e2e30efbcf9851d0f84ee3b9a58059674df33a438b61dca6adebf
+
+minikube:
+  version: 0.24.1
+  checksum: sha256:1261de09386fd1f4ee7a4645958757c2c9e69f419a2a4ca8aff475017a7e036e

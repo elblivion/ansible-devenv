@@ -1,0 +1,53 @@
+- name: Check if kubectl is installed and up to date
+  shell: "kubectl version 2>/dev/null | grep Client.*GitVersion..v{{ kubectl.version }}"
+  ignore_errors: true
+  register: kubectl_installed
+
+- name: Download kubectl
+  when: kubectl_installed.rc != 0
+  get_url:
+    url: https://storage.googleapis.com/kubernetes-release/release/v{{ kubectl.version }}/bin/linux/amd64/kubectl
+    dest: ~/.ansible/kubectl
+    checksum: "{{ kubectl.checksum }}"
+  register: kubectl_download
+
+- name: Install kubectl
+  include: install.yml src=kubectl
+  when: kubectl_download.changed
+
+- name: bash setup
+  include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/kubectl dest=~/.bashrc.d/30-kubectl
+
+- name: Check if kops is installed and up to date
+  shell: "kops version | grep {{ kops.version }}"
+  ignore_errors: true
+  register: kops_installed
+
+- name: Download kops
+  when: kops_installed.rc != 0
+  get_url:
+    url: https://github.com/kubernetes/kops/releases/download/{{ kops.version }}/kops-linux-amd64
+    dest: ~/.ansible/kops
+    checksum: "{{ kops.checksum }}"
+  register: kops_download
+
+- name: Install kops
+  include: install.yml src=kops
+  when: kops_download.changed
+
+- name: Check if minikube is installed and up to date
+  shell: "minikube version | grep {{ minikube.version }}"
+  ignore_errors: true
+  register: minikube_installed
+
+- name: Download minikube
+  when: minikube_installed.rc != 0
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/v{{ minikube.version }}/minikube-linux-amd64
+    dest: ~/.ansible/minikube
+    checksum: "{{ minikube.checksum }}"
+  register: minikube_download
+
+- name: Install minikube
+  include: install.yml src=minikube
+  when: minikube_download.changed

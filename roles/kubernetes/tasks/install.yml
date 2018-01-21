@@ -1,0 +1,7 @@
+- name: Copy {{ src }} into /usr/local/bin
+  become: true
+  copy:
+    src: ~{{ ansible_user_id }}/.ansible/{{ src }}
+    dest: /usr/local/bin
+    remote_src: true
+    mode: 0755
