@@ -51,3 +51,20 @@
 - name: Install minikube
   include: install.yml src=minikube
   when: minikube_download.changed
+
+- name: Check if stern is installed and up to date
+  shell: "stern version 2>/dev/null | grep {{ stern.version }}"
+  ignore_errors: true
+  register: stern_installed
+
+- name: Download stern
+  when: stern_installed.rc != 0
+  get_url:
+    url: https://github.com/wercker/stern/releases/download/{{ stern.version }}/stern_linux_amd64
+    dest: ~/.ansible/stern
+    checksum: "{{ stern.checksum }}"
+  register: stern_download
+
+- name: Install stern
+  include: install.yml src=stern
+  when: stern_download.changed

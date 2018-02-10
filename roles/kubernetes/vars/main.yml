@@ -9,3 +9,7 @@ kops:
 minikube:
   version: 0.24.1
   checksum: sha256:1261de09386fd1f4ee7a4645958757c2c9e69f419a2a4ca8aff475017a7e036e
+
+stern:
+  version: 1.6.0
+  checksum: sha256:085325dcd7f3de20fb58ca964d5acf2b6c9d0f239800eb53a234363b0fd296b5
