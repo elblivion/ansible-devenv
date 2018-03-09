@@ -1,0 +1,10 @@
+* Fix hub install / GH releases module
+* UTF terminal (isn't it?)
+* all the envrcs
+* expect (what for?)
+* vagrant https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.tar.xz?_ga=2.189275371.1594137279.1519666402-1422140277.1517840960
+* golang
+
+$ grep force.dev /usr/share/applications/google-chrome.desktop
+Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1.5 %U
+
