@@ -8,3 +8,5 @@
 $ grep force.dev /usr/share/applications/google-chrome.desktop
 Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1.5 %U
 
+sudo cp google-chrome.desktop /usr/share/applications/google-chrome.desktop
+
