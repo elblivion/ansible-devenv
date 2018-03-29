@@ -58,7 +58,7 @@
   when: minikube_download.changed
 
 - name: Check if stern is installed and up to date
-  shell: "stern version 2>/dev/null | grep {{ stern.version }}"
+  shell: "stern -v 2>/dev/null | grep {{ stern.version }}"
   ignore_errors: true
   register: stern_installed
 
