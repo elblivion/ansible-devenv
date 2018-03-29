@@ -14,6 +14,7 @@
     # IDE
     - vim
     # devenv
+    - sh_dev
     - workspace
     - chef
     - docker
