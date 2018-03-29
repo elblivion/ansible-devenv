@@ -22,6 +22,7 @@
     - kubernetes
     # GUI programs
     - zoom_us
+    - chrome_config
 
 - hosts: single_role
   roles:

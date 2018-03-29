@@ -1,0 +1,5 @@
+- name: Configure chrome for Unity
+  become: true
+  copy:
+    src: roles/chrome_config/files/google-chrome.desktop
+    dest: /usr/share/applications/google-chrome.desktop
