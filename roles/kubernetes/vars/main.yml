@@ -3,8 +3,8 @@ kubectl:
   checksum: sha256:0114255568a8b5cb998c516370f3822bebe78b84d1e914d4d9afff95518a56c0
 
 kops:
-  version: 1.8.0
-  checksum: sha256:57d400a10f3e2e30efbcf9851d0f84ee3b9a58059674df33a438b61dca6adebf
+  version: 1.9.0-beta.2
+  checksum: sha256:90664a686e186cfbf0e1cbba626479b5a41709ad83a546f043f7fa1ed8808ff3
 
 minikube:
   version: 0.24.1
