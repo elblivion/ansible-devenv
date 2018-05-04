@@ -4,3 +4,4 @@
 * expect (what for?)
 * vagrant https://releases.hashicorp.com/vagrant/2.0.2/vagrant_2.0.2_x86_64.tar.xz?_ga=2.189275371.1594137279.1519666402-1422140277.1517840960
 * golang
+* apt-get install oathtool
