@@ -21,9 +21,9 @@ if [ $? -ne 0]; then
   echo 'Installing lastpass-cli from source (Ubuntu has a broken, old version)...'
   mkdir -p ~/lastpass
   pushd ~/lastpass
-  wget https://github.com/lastpass/lastpass-cli/archive/v1.1.2.tar.gz
-  tar -xzf v1.1.2.tar.gz
-  cd lastpass-cli-1.1.2
+  wget https://github.com/lastpass/lastpass-cli/archive/v1.3.1.tar.gz
+  tar -xzf v1.3.1.tar.gz
+  cd lastpass-cli-1.3.1
   cmake .
   make
   sudo make install install-doc
