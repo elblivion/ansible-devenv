@@ -12,12 +12,8 @@
 - name: Install Golang {{ golang.version }}
   become: true
   apt:
-    name: golang-{{ golang.version }}
+    name: golang-{{ golang.version }}-go
 
-- name: Install gocode
-  become: true
-  apt:
-    name: gocode
 
 - name: Add golang {{ golang.version }} to PATH
   include: roles/bashrc/tasks/bashrc_template.yml name=golang-path src=templates/golang-path.sh priority=20
