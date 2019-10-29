@@ -8,10 +8,5 @@
     path: ~/.aws
     state: directory
 
-- name: Create ~/.aws/credentials
-  template:
-    dest: ~/.aws/credentials
-    src: credentials
-
 - name: bash setup
   include: roles/dotfiles/tasks/symlink.yml src=.bashrc.d/aws dest=~/.bashrc.d/30-aws

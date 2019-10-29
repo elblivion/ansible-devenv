@@ -1,0 +1,22 @@
+[profile production]
+region = us-east-1
+
+[profile preview]
+region = eu-west-1
+role_arn = arn:aws:iam::718539334177:role/DevSuperAdmin
+source_profile = production
+
+[profile bi]
+region = us-east-1
+role_arn = arn:aws:iam::427052161823:role/BISuperAdmin
+source_profile = production
+
+[profile tools]
+region = us-east-1
+role_arn = arn:aws:iam::439744694103:role/ToolsAdmin
+source_profile = production
+
+[profile staging]
+region = us-east-1
+role_arn = arn:aws:iam::316475311222:role/StagingSuperAdmin
+source_profile = production
