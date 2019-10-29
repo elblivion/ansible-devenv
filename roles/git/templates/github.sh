@@ -1,3 +1,3 @@
-export GITHUB_USER={{ lookup('lastpass', 'github.com - elblivion', field='username') }}
-export GITHUB_PASSWORD={{ lookup('lastpass', 'github.com - elblivion', field='token') }}
-export GITHUB_TOKEN={{ lookup('lastpass', 'Github https token', field='password') }}
+export GITHUB_USER={{ lookup('onepassword', 'Github - elblivion', field='username') }}
+export GITHUB_PASSWORD={{ lookup('onepassword', 'Github - elblivion', field='password') }}
+export GITHUB_TOKEN={{ lookup('onepassword', 'Github https api token', field='password') }}
