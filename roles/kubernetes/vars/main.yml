@@ -1,14 +1,14 @@
 kubectl:
-  version: 1.10.3
-  checksum: sha256:62893257193f9e848f383055993e63166ab67bf872c85e896ce9b9167ba85403
+  version: 1.15.3
+  checksum: sha256:6e805054a1fb2280abb53f75b57a1b92bf9c66ffe0d2cdcd46e81b079d93c322
 
 kops:
   version: 1.9.0-beta.2
   checksum: sha256:90664a686e186cfbf0e1cbba626479b5a41709ad83a546f043f7fa1ed8808ff3
 
 minikube:
-  version: 0.24.1
-  checksum: sha256:1261de09386fd1f4ee7a4645958757c2c9e69f419a2a4ca8aff475017a7e036e
+  version: 0.35.0
+  checksum: sha256:e161995604c42c37a797fd11fac5d545f8b75f0796afc3b10679253bf229ff3d
 
 stern:
   version: 1.6.0
