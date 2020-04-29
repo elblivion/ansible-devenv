@@ -24,6 +24,12 @@
     # GUI programs
     - zoom_us
     - chrome_config
+    # other
+    - keybase
+
+      #TODO
+      #okta
+      # https://github.com/oktadeveloper/okta-aws-cli-assume-role#macoslinux
 
 - hosts: single_role
   roles:
