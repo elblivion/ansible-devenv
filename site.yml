@@ -17,7 +17,7 @@
     - sh_dev
     - workspace
     - chef
-    - docker
+      #    - docker
     - aws
     - kubernetes
     - golang
