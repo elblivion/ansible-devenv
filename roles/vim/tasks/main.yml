@@ -27,4 +27,4 @@
     dest=~/.vim/bundle/vim-fugitive
     update=yes
     accept_hostkey=yes
-  sudo: no
+    #sudo: no
