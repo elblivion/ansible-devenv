@@ -1,6 +1,6 @@
 kubectl:
-  version: 1.15.3
-  checksum: sha256:6e805054a1fb2280abb53f75b57a1b92bf9c66ffe0d2cdcd46e81b079d93c322
+  version: 1.18.3
+  checksum: sha256:6fcf70aae5bc64870c358fac153cdfdc93f55d8bae010741ecce06bb14c083ea
 
 kops:
   version: 1.9.0-beta.2
