@@ -20,7 +20,8 @@
       #    - docker
     - aws
     - kubernetes
-    - golang
+      # TODO: reinstall without ppa
+      #- golang
     # GUI programs
     - zoom_us
     - chrome_config
